@@ -5,15 +5,17 @@
 
 # import numpy as np
 # import matplotlib.pyplot as plt
-# from matplotlib.animation import FuncAnimation
 
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
+import matplotlib.animation as animation
+from matplotlib.animation import FuncAnimation
+from matplotlib.animation import PillowWriter
 
 
 class Branching_BM:
-    def __init__(self, num_steps=2000, branching_prob=0.60, scale=0.1, seed=41):
+    def __init__(self, num_steps=301, branching_prob=0.575, scale=10, seed=42):
         """
         Initialize the Branching Brownian Motion simulation.
 
@@ -29,6 +31,7 @@ class Branching_BM:
 
         # Initialize some state variables
         self.path_length = [num_steps]  # num_steps means the path is still alive
+        self.branch_from = [0]
         self.final_length = 0
         self.num_paths = len(self.positions)
 
@@ -38,7 +41,7 @@ class Branching_BM:
         # Set the random seed
         np.random.seed(self.seed)
 
-    def Update_One_Path(self, path_id, step):
+    def Branch_or_Die(self, path_id, step):
         """
         Update the specified path based on the branching and dying logic.
 
@@ -60,6 +63,7 @@ class Branching_BM:
                 self.positions.append(np.copy(self.positions[path_id]))  # Branching: duplicate the path
                 self.path_length.append(self.num_steps)
                 self.num_paths += 1
+                self.branch_from.append(step - 1)
                 self.One_Step(path_id, step)
                 self.One_Step(self.num_paths - 1, step)
             case 'die':
@@ -82,9 +86,7 @@ class Branching_BM:
             for path_index in range(len(self.positions)):
                 if self.path_length[path_index] == self.num_steps:  # If path is alive, update
                     if step % 100 == 0:
-                        alive = self.Update_One_Path(path_index, step)
-                        if not alive:
-                            break
+                        self.Branch_or_Die(path_index, step)
                     else:
                         self.One_Step(path_index, step)
 
@@ -116,7 +118,7 @@ class Branching_BM:
 
         # Plot each path
         for i in range(self.num_paths):
-            ax.plot(range(self.path_length[i] - 2), self.positions[i][:self.path_length[i] - 2], color=self.colors[i % len(self.colors)], label=f'Path {i+1}')
+            ax.plot(range(self.branch_from[i], self.path_length[i]), self.positions[i][self.branch_from[i]:self.path_length[i]], color=self.colors[i % len(self.colors)], label=f'Path {i+1}')
             plt.draw()
             plt.pause(1)
 
@@ -128,10 +130,6 @@ class Branching_BM:
         ax.set_title("Branching Brownian Motion Paths")
         ax.set_xlabel("Step")
         ax.set_ylabel("Position")
-
-        # # Show legend if paths are not too many
-        # if self.num_paths <= 10:
-        #     ax.legend()
 
         plt.show()
 
@@ -147,8 +145,70 @@ class Branching_BM:
             for row in zip(*self.positions):
                 writer.writerow(row)
 
+    def Animation(self):
+        """
+        Generate the animation of the branching Brownian motion.
+        """
+        fig, ax = plt.subplots()
+
+        # Determine plot limits
+        max_path_length = max(self.path_length)
+        min_position = min(path.min() for path in self.positions)
+        max_position = max(path.max() for path in self.positions)
+
+        # Set plot limits
+        ax.set_xlim(0, max_path_length)
+        ax.set_ylim(min_position, max_position)
+
+        # Set title and labels
+        ax.set_title("Branching Brownian Motion Paths")
+        ax.set_xlabel("Step")
+        ax.set_ylabel("Position")
+
+        # Initialize lines for each path
+        lines = [ax.plot([], [], color=self.colors[i % len(self.colors)], label=f'Path {i+1}')[0] for i in range(self.num_paths)]
+
+        # Animation update function
+        def update(frame):
+            for i, line in enumerate(lines):
+                if frame < self.path_length[i]:
+                    line.set_data(range(self.branch_from[i], frame), self.positions[i][self.branch_from[i]:frame])
+                    # line.set_data(range(frame + 1), self.positions[i][:frame + 1])
+                else:
+                    line.set_data(range(self.branch_from[i], self.path_length[i]), self.positions[i][self.branch_from[i]:self.path_length[i]])
+            return lines
+
+        # update(max_path_length)
+        # update(2000)
+        # for i in range(2000):
+        #     update(i)
+        #     plt.draw()
+        #     plt.pause(0.001)
+
+        # Create the animation using FuncAnimation
+        anim = FuncAnimation(fig,
+                             update,
+                             frames=301,
+                             interval=1,
+                             blit=True)
+
+        # Save the animation
+        # anim.save('branching_brownian_motion.gif', writer='imagemagick', fps=60)
+
+        # anim = FuncAnimation(fig, update, frames=301, interval=50, blit=True)
+
+        # Save the animation using PillowWriter
+        anim.save('branching_brownian_motion.gif', writer=PillowWriter(fps=60), dpi=300)
+
+        # # Show the plot
+        # plt.show()
+        #
+        # # Show the plot
+        # plt.show()
+
 
 BM = Branching_BM()
 BM.simulate()
 BM.export_paths()
-BM.plot_paths()
+# BM.plot_paths()
+BM.Animation()
