@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-#
-# Created at Tue 23 Jan 2024 04:50:37 PM CST
-#
+"""
 
-# import numpy as np
-# import matplotlib.pyplot as plt
+Simulations for the branching brownian motion.
+
+By Le Chen and Chatgpt
+chenle02@gmail.com / le.chen@auburn.edu
+Created at Tue 23 Jan 2024 04:50:37 PM CST
+
+Thanks Yumin Zhong (yzz0225@auburn.edu) and Panqiu Xia (pqxia@auburn.edu) for discussions.
+
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt
