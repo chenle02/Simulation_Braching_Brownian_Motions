@@ -9,13 +9,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
-import matplotlib.animation as animation
+import argparse
+# import matplotlib.animation as animation
 from matplotlib.animation import FuncAnimation
 from matplotlib.animation import PillowWriter
 
 
 class Branching_BM:
-    def __init__(self, num_steps=301, branching_prob=0.575, scale=10, seed=42):
+    def __init__(self, num_steps=301, branching_prob=0.5, scale=10, seed=42):
         """
         Initialize the Branching Brownian Motion simulation.
 
@@ -90,21 +91,6 @@ class Branching_BM:
                     else:
                         self.One_Step(path_index, step)
 
-    # def plot_paths(self):
-    #     """
-    #     Plot all the paths of the Brownian motions.
-    #     """
-    #     fig, ax = plt.subplots()
-    #     # Plot each path
-    #     for i in range(self.num_paths):
-    #         # Plot up to the length of the current path
-    #         ax.plot(range(self.path_length[i]), self.positions[i][:self.path_length[i]], color=self.colors[i % len(self.colors)])
-    #
-    #     ax.set_title("Branching Brownian Motion Paths")
-    #     ax.set_xlabel("Step")
-    #     ax.set_ylabel("Position")
-    #     plt.show()
-
     def plot_paths(self):
         """
         Plot all the paths of the Brownian motions.
@@ -127,7 +113,7 @@ class Branching_BM:
         ax.set_ylim(min_position, max_position)
 
         # Set title and labels
-        ax.set_title("Branching Brownian Motion Paths")
+        ax.set_title("Branching Brownian Motions")
         ax.set_xlabel("Step")
         ax.set_ylabel("Position")
 
@@ -145,7 +131,7 @@ class Branching_BM:
             for row in zip(*self.positions):
                 writer.writerow(row)
 
-    def Animation(self):
+    def Animation(self, dpi=150):
         """
         Generate the animation of the branching Brownian motion.
         """
@@ -161,7 +147,7 @@ class Branching_BM:
         ax.set_ylim(min_position, max_position)
 
         # Set title and labels
-        ax.set_title("Branching Brownian Motion Paths")
+        ax.set_title("Branching Brownian Motions")
         ax.set_xlabel("Step")
         ax.set_ylabel("Position")
 
@@ -192,23 +178,35 @@ class Branching_BM:
                              interval=1,
                              blit=True)
 
-        # Save the animation
-        # anim.save('branching_brownian_motion.gif', writer='imagemagick', fps=60)
-
-        # anim = FuncAnimation(fig, update, frames=301, interval=50, blit=True)
-
         # Save the animation using PillowWriter
-        anim.save('branching_brownian_motion.gif', writer=PillowWriter(fps=60), dpi=300)
-
-        # # Show the plot
-        # plt.show()
-        #
-        # # Show the plot
-        # plt.show()
+        # Form the filename using the parameters
+        filename = f'branching_brownian_motion_{self.num_steps}_{self.branching_prob}_{self.scale}_{self.seed}.gif'
+        anim.save(filename, writer=PillowWriter(fps=60), dpi=300)
 
 
-BM = Branching_BM()
-BM.simulate()
-BM.export_paths()
-# BM.plot_paths()
-BM.Animation()
+# Add the parse the command line arguments here and include main function
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Simulate branching Brownian motion.")
+    parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed")
+    parser.add_argument('-n', '--num-steps', type=int, default=301, help="Number of steps in the simulation")
+    parser.add_argument('-p', '--branching-prob', type=float, default=0.5, help="Probability of branching at each step")
+    parser.add_argument('-c', '--scale', type=float, default=10.0, help="Scale of the Brownian motion")
+    parser.add_argument('-d', '--dpi', type=float, default=150, help="The dpi parameter for the animation")
+    args = parser.parse_args()
+
+    # Create an instance of the Branching_BM class
+    BM = Branching_BM(num_steps=args.num_steps, branching_prob=args.branching_prob, scale=args.scale, seed=args.seed)
+
+    # Run the simulation
+    BM.simulate()
+
+    # Export the paths
+    BM.export_paths()
+
+    # Plot the paths
+    BM.plot_paths()
+
+    # Ask if you want to save the animation
+    answer = input("Do you want to save the animation? (y/n)")
+    if answer == 'y':
+        BM.Animation(args.dpi)
