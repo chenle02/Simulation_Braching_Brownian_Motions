@@ -180,7 +180,7 @@ class Branching_BM:
 
         # Save the animation using PillowWriter
         # Form the filename using the parameters
-        filename = f'branching_brownian_motion_{self.num_steps}_{self.branching_prob}_{self.scale}_{self.seed}.gif'
+        filename = f'branching_brownian_motion_NumSteps={self.num_steps}_BrachingProb={self.branching_prob}_GausianScale={self.scale}_RandomSeed={self.seed}.gif'
         anim.save(filename, writer=PillowWriter(fps=60), dpi=300)
 
 
