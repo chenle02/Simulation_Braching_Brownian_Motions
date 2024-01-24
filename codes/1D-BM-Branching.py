@@ -13,7 +13,7 @@ import csv
 
 
 class Branching_BM:
-    def __init__(self, num_steps=1000, branching_prob=0.80, scale=1, seed=41):
+    def __init__(self, num_steps=2000, branching_prob=0.60, scale=0.1, seed=41):
         """
         Initialize the Branching Brownian Motion simulation.
 
@@ -117,6 +117,8 @@ class Branching_BM:
         # Plot each path
         for i in range(self.num_paths):
             ax.plot(range(self.path_length[i] - 2), self.positions[i][:self.path_length[i] - 2], color=self.colors[i % len(self.colors)], label=f'Path {i+1}')
+            plt.draw()
+            plt.pause(1)
 
         # Set plot limits
         ax.set_xlim(0, max_path_length)
