@@ -56,6 +56,10 @@ This command runs the simulation with 500 steps, a branching probability of 0.7,
 Contributions to this project are welcome! Please feel free to submit pull
 requests or open issues to discuss potential improvements or features.
 
+## Acknowledgments
+
+Thanks discussions with Yumin Zhong and Panqiu Xia from Auburn University.
+
 ## License
 
 * [MIT](./LICENSE)
