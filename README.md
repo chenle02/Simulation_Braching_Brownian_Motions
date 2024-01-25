@@ -21,13 +21,13 @@ the data, and generate an animation of the process.
 ## Installation
 Ensure you have Python 3 installed. You can install the required packages using pip:
 ```bash
-pip install numpy matplotlib
+pip install git+https://github.com/yourusername/mypackage.git
 ```
 
 ## Usage
 To run the simulation with default parameters, simply execute the script:
 ```bash
-python3 1D-BM-Branching.py --help
+SuperBm --help
 ```
 
 ### Command Line Arguments
@@ -41,7 +41,7 @@ You can customize the simulation using the following command line arguments:
 
 ### Example
 ```bash
-python3 1D-BM-Branching.py --num-steps 500 --branching-prob 0.7 --scale 15
+SuperBm --num-steps 500 --branching-prob 0.7 --scale 15
 ```
 
 This command runs the simulation with 500 steps, a branching probability of 0.7, a Brownian motion scale of 15, and with default values for the other parameters.
