@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='your_package',
+    name='Simulation_Super_Brownian_Motions',
     version='1.0',
     packages=find_packages(),
-    description='A short description of your project',
+    description='This is a package for simulating super Brownian motions.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='Le Chen',
@@ -21,4 +21,9 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
+    entry_points={
+        'console_scripts': [
+            'SuperBm=Simulation_Super_Brownian_Motions.1D-BM-Branching:main',
+        ],
+    },
 )
