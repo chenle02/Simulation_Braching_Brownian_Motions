@@ -23,6 +23,10 @@ Ensure you have Python 3 installed. You can install the required packages using 
 ```bash
 pip install git+https://github.com/yourusername/mypackage.git
 ```
+or
+```bash
+pip install simulation-super-brownian-motions
+```
 
 ## Usage
 To run the simulation with default parameters, simply execute the script:
@@ -37,19 +41,23 @@ You can customize the simulation using the following command line arguments:
 - `-p` or `--branching-prob`: Probability of branching at each step (default: 0.5)
 - `-c` or `--scale`: Scale of the Brownian motion (default: 10.0)
 - `-d` or `--dpi`: DPI parameter for the animation (default: 150)
-
+- `--save-animation`: Save the animation as a GIF
 
 ### Example
 ```bash
 SuperBm --num-steps 500 --branching-prob 0.7 --scale 15
 ```
+This command runs the simulation with 500 steps, a branching probability of 0.7, a Brownian motion scale of 15, and with default values for the other parameters. The animation won't be saved as a GIF.
 
-This command runs the simulation with 500 steps, a branching probability of 0.7, a Brownian motion scale of 15, and with default values for the other parameters.
+If you want the animation, run the following command:
+```bash
+SuperBm --num-steps 500 --branching-prob 0.7 --scale 15 --save-animation
+```
 
 ## Output
 - The script will plot the paths of the Brownian motion.
 - Paths will be exported as a CSV file named `positions_transposed.csv`.
-- If opted for, an animation of the process will be saved as a GIF.
+- With additional argument `--save-animation`, the script will generate an animation of the process and save it as a GIF file.
 
 ## Contributing
 
