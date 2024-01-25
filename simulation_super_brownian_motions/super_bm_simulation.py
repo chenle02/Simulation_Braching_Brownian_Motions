@@ -194,14 +194,14 @@ class Branching_BM:
         anim.save(filename, writer=PillowWriter(fps=60), dpi=300)
 
 
-# Add the parse the command line arguments here and include main function
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed")
     parser.add_argument('-n', '--num-steps', type=int, default=301, help="Number of steps in the simulation")
     parser.add_argument('-p', '--branching-prob', type=float, default=0.5, help="Probability of branching at each step")
     parser.add_argument('-c', '--scale', type=float, default=10.0, help="Scale of the Brownian motion")
     parser.add_argument('-d', '--dpi', type=float, default=150, help="The dpi parameter for the animation")
+    parser.add_argument('--save-animation', action='store_true', help="Save the animation as a GIF")
     args = parser.parse_args()
 
     # Create an instance of the Branching_BM class
@@ -216,7 +216,10 @@ if __name__ == "__main__":
     # Plot the paths
     BM.plot_paths()
 
-    # Ask if you want to save the animation
-    answer = input("Do you want to save the animation? (y/n)")
-    if answer == 'y':
+    # Save the animation if requested
+    if args.save_animation:
         BM.Animation(args.dpi)
+
+
+if __name__ == "__main__":
+    main()
