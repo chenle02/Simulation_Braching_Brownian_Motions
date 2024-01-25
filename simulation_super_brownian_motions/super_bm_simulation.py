@@ -20,13 +20,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import argparse
+import time
 # import matplotlib.animation as animation
 from matplotlib.animation import FuncAnimation
 from matplotlib.animation import PillowWriter
 
 
 class Branching_BM:
-    def __init__(self, num_steps=301, branching_prob=0.5, scale=10, seed=42):
+    def __init__(self, num_steps=301, update_steps=100, branching_prob=0.5, scale=10, seed=42):
         """
         Initialize the Branching Brownian Motion simulation.
 
@@ -35,6 +36,7 @@ class Branching_BM:
         :param seed: random seed
         """
         self.num_steps = num_steps
+        self.update_steps = update_steps
         self.branching_prob = branching_prob
         self.seed = seed
         self.positions = [np.zeros(num_steps)]
@@ -96,7 +98,7 @@ class Branching_BM:
         for step in range(1, self.num_steps):
             for path_index in range(len(self.positions)):
                 if self.path_length[path_index] == self.num_steps:  # If path is alive, update
-                    if step % 100 == 0:
+                    if step % self.update_steps == 0:
                         self.Branch_or_Die(path_index, step)
                     else:
                         self.One_Step(path_index, step)
@@ -196,16 +198,29 @@ class Branching_BM:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed")
-    parser.add_argument('-n', '--num-steps', type=int, default=301, help="Number of steps in the simulation")
+    parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed (use -1 for a random seed based on current time)")
+    parser.add_argument('-n', '--num-steps', type=int, default=301, help="Maximum number of steps in the simulation")
+    parser.add_argument('-u', '--update-steps', type=int, default=100, help="Number of steps between each branching event")
     parser.add_argument('-p', '--branching-prob', type=float, default=0.5, help="Probability of branching at each step")
     parser.add_argument('-c', '--scale', type=float, default=10.0, help="Scale of the Brownian motion")
     parser.add_argument('-d', '--dpi', type=float, default=150, help="The dpi parameter for the animation")
-    parser.add_argument('--save-animation', action='store_true', help="Save the animation as a GIF")
+    parser.add_argument('-a', '--save-animation', action='store_true', help="Save the animation as a GIF")
     args = parser.parse_args()
 
+    # Set the random seed
+    if args.seed == -1:
+        # Use the current time as the random seed for true randomness
+        seed = int(time.time())
+    else:
+        # Use the provided seed for reproducibility
+        seed = args.seed
+
     # Create an instance of the Branching_BM class
-    BM = Branching_BM(num_steps=args.num_steps, branching_prob=args.branching_prob, scale=args.scale, seed=args.seed)
+    BM = Branching_BM(num_steps=args.num_steps,
+                      update_steps=args.update_steps,
+                      branching_prob=args.branching_prob,
+                      scale=args.scale,
+                      seed=seed)
 
     # Run the simulation
     BM.simulate()
