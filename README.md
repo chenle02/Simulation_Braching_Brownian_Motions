@@ -5,13 +5,12 @@
 
 ## Introduction
 
-This Python script simulates super Brownian Motion (SBm) in R, a stochastic
-process where particles move randomly and branch under certain conditions. The
-script offers functionalities to simulate the motion, plot the paths, export
-the data, and generate an animation of the process.
+This Python script simulates super Brownian Motion (SBm), a stochastic process
+where particles move randomly and branch under certain conditions. The script
+offers functionalities to simulate the motion, plot the paths, save the images,
+export the data, and generate an animation of the process in the gif format.
 
-* Currently, all paths will update every 100 steps. More flexibility will be added in the future.
-* At each 100 steps, each path will branch to two or die with the prescribed probability.
+* Currently, all paths will branch or die after every fixed number of steps (default 100). More flexibility will be added in the future.
 
 ## Requirements
 - Python 3
@@ -23,7 +22,7 @@ Ensure you have Python 3 installed. You can install the required packages using 
 ```bash
 pip install git+https://github.com/yourusername/mypackage.git
 ```
-or
+or from [pypi](https://pypi.org/project/simulation-super-brownian-motions/) 
 ```bash
 pip install simulation-super-brownian-motions
 ```
