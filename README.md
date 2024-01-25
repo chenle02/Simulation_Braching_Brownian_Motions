@@ -58,7 +58,7 @@ requests or open issues to discuss potential improvements or features.
 
 ## Acknowledgments
 
-Thanks discussions with Yumin Zhong and Panqiu Xia from Auburn University.
+Thanks for helpful discussions with Yumin Zhong and Panqiu Xia from Auburn University.
 
 ## License
 
