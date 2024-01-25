@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 import csv
 import argparse
 import time
+from datetime import datetime
 # import matplotlib.animation as animation
 from matplotlib.animation import FuncAnimation
 from matplotlib.animation import PillowWriter
@@ -41,6 +42,18 @@ class Branching_BM:
         self.seed = seed
         self.positions = [np.zeros(num_steps)]
         self.scale = scale
+
+        # Get the current timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+        # Construct the name with the timestamp
+        self.name = (f'SuperBm_'
+                     f'Timestamp={timestamp}_'
+                     f'NumSteps={num_steps}_'
+                     f'UpdateSteps={update_steps}_'
+                     f'BrachingProb={branching_prob}_'
+                     f'GausianScale={scale}_'
+                     f'RandomSeed={seed}')
 
         # Initialize some state variables
         self.path_length = [num_steps]  # num_steps means the path is still alive
@@ -129,6 +142,11 @@ class Branching_BM:
         ax.set_xlabel("Step")
         ax.set_ylabel("Position")
 
+        # List of formats to save the plot in
+        formats = ['jpeg', 'png']
+        for fmt in formats:
+            plt.savefig(f'{self.name}.{fmt}', format=fmt)
+
         plt.show()
 
     def export_paths(self):
@@ -136,7 +154,8 @@ class Branching_BM:
         Export the paths in csv file.
         """
         # Assuming self.positions is a list of lists or a list of NumPy arrays
-        with open('positions_transposed.csv', 'w', newline='') as file:
+        filename = self.name + '.csv'
+        with open(filename, 'w', newline='') as file:
             writer = csv.writer(file)
 
             # Transpose and write to CSV
@@ -192,8 +211,9 @@ class Branching_BM:
 
         # Save the animation using PillowWriter
         # Form the filename using the parameters
-        filename = f'branching_brownian_motion_NumSteps={self.num_steps}_BrachingProb={self.branching_prob}_GausianScale={self.scale}_RandomSeed={self.seed}.gif'
+        filename = self.name + '.gif'
         anim.save(filename, writer=PillowWriter(fps=60), dpi=300)
+        print(f"Animation saved as the GIF file:{filename}")
 
 
 def main():
