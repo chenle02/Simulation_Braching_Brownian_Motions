@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Simulation_Super_Brownian_Motions',
+    name='simulation_super_brownian_motions',
     version='1.0',
     packages=find_packages(),
     description='This is a package for simulating super Brownian motions.',
@@ -23,7 +23,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'SuperBm=Simulation_Super_Brownian_Motions.Simulation_Super_Brownian_Motions:main',
+            'SuperBm=simulation_super_brownian_motions.super_bm_simulation:main',
         ],
     },
 )
