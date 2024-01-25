@@ -10,6 +10,9 @@ process where particles move randomly and branch under certain conditions. The
 script offers functionalities to simulate the motion, plot the paths, export
 the data, and generate an animation of the process.
 
+* Currently, all paths will update every 100 steps. More flexibility will be added in the future.
+* At each 100 steps, each path will branch to two or die with the prescribed probability.
+
 ## Requirements
 - Python 3
 - NumPy
@@ -34,6 +37,7 @@ You can customize the simulation using the following command line arguments:
 - `-p` or `--branching-prob`: Probability of branching at each step (default: 0.5)
 - `-c` or `--scale`: Scale of the Brownian motion (default: 10.0)
 - `-d` or `--dpi`: DPI parameter for the animation (default: 150)
+
 
 ### Example
 ```bash
