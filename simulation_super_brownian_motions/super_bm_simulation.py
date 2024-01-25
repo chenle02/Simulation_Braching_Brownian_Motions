@@ -30,7 +30,7 @@ from matplotlib.animation import PillowWriter
 class Branching_BM:
     def __init__(self, num_steps=301, update_steps=100, branching_prob=0.5, scale=10, seed=42):
         """
-        Initialize the Branching Brownian Motion simulation.
+        Initialize the Super Brownian Motion simulation.
 
         :param num_steps: Number of steps in the simulation
         :param branching_prob: Probability of branching at each step
@@ -138,14 +138,19 @@ class Branching_BM:
         ax.set_ylim(min_position, max_position)
 
         # Set title and labels
-        ax.set_title("Branching Brownian Motions")
+        ax.set_title("Super Brownian Motions")
         ax.set_xlabel("Step")
         ax.set_ylabel("Position")
 
         # List of formats to save the plot in
         formats = ['jpeg', 'png']
+
+        # Saving the plot in the specified formats and preparing the message for the saved plot files
+        print("Sample paths have been saved as the following image files:")
         for fmt in formats:
-            plt.savefig(f'{self.name}.{fmt}', format=fmt)
+            filename = f'{self.name}.{fmt}'
+            plt.savefig(filename, format=fmt)
+            print(f"* {filename}")
 
         plt.show()
 
@@ -162,10 +167,13 @@ class Branching_BM:
             for row in zip(*self.positions):
                 writer.writerow(row)
 
+        print(f"Sample paths have been saved as the following CSV file:\n * {filename}")
+
     def Animation(self, dpi=150):
         """
         Generate the animation of the branching Brownian motion.
         """
+        print("Generating the animation... (This may take a while)")
         fig, ax = plt.subplots()
 
         # Determine plot limits
@@ -178,7 +186,7 @@ class Branching_BM:
         ax.set_ylim(min_position, max_position)
 
         # Set title and labels
-        ax.set_title("Branching Brownian Motions")
+        ax.set_title("Super Brownian Motions")
         ax.set_xlabel("Step")
         ax.set_ylabel("Position")
 
@@ -213,7 +221,7 @@ class Branching_BM:
         # Form the filename using the parameters
         filename = self.name + '.gif'
         anim.save(filename, writer=PillowWriter(fps=60), dpi=300)
-        print(f"Animation saved as the GIF file:{filename}")
+        print(f'Animation has been saved as the following GIF file:\n* {filename}')
 
 
 def main():
