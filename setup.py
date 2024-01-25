@@ -23,7 +23,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'SuperBm=Simulation_Super_Brownian_Motions.1D-BM-Branching:main',
+            'SuperBm=Simulation_Super_Brownian_Motions.Simulation_Super_Brownian_Motions:main',
         ],
     },
 )
