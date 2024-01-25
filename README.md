@@ -36,12 +36,13 @@ SuperBm --help
 
 ### Command Line Arguments
 You can customize the simulation using the following command line arguments:
-- `-s` or `--seed`: Random seed (default: 42)
+- `-s` or `--seed`: Random seed (default: 42), set to `-1` for random seed based on current time (for random outcome)
 - `-n` or `--num-steps`: Number of steps in the simulation (default: 301)
+- `-u` or `--update-steps`: Number of steps between branching events (default: 100)
 - `-p` or `--branching-prob`: Probability of branching at each step (default: 0.5)
 - `-c` or `--scale`: Scale of the Brownian motion (default: 10.0)
 - `-d` or `--dpi`: DPI parameter for the animation (default: 150)
-- `--save-animation`: Save the animation as a GIF
+- `-a` or `--save-animation`: Save the animation as a GIF
 
 ### Example
 ```bash
