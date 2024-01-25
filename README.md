@@ -54,4 +54,4 @@ requests or open issues to discuss potential improvements or features.
 
 ## License
 
-* (MIT)[./LICENSE]
+* [MIT](./LICENSE)
