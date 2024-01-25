@@ -56,8 +56,9 @@ SuperBm --num-steps 500 --branching-prob 0.7 --scale 15 --save-animation
 
 ## Output
 - The script will plot the paths of the Brownian motion.
-- Paths will be exported as a CSV file named `positions_transposed.csv`.
-- With additional argument `--save-animation`, the script will generate an animation of the process and save it as a GIF file.
+- Paths will be exported as a CSV file.
+- The plot will be saved as files in both PNG and JPET formats.
+- With additional argument `-a` or `--save-animation`, the script will generate an animation of the process and save it as a GIF file.
 
 ## Contributing
 
