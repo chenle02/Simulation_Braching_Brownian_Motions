@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 """
 
-Simulations for the branching brownian motion.
+Simulations for the branching Brownian motions.
+
+It includes functionalities to:
+- Simulate the motion
+- Plot the paths
+- Export the data
+- Generate an animation of the process
 
 By Le Chen and Chatgpt
 chenle02@gmail.com / le.chen@auburn.edu
 Created at Tue 23 Jan 2024 04:50:37 PM CST
 
-Thanks Yumin Zhong (yzz0225@auburn.edu) and Panqiu Xia (pqxia@auburn.edu) for discussions.
-
+Thanks Yumin Zhong (yzz0225@auburn.edu) and Panqiu Xia (pqxia@auburn.edu) for helpful discussions.
 """
 
 import numpy as np
@@ -191,7 +196,7 @@ class Branching_BM:
 
 # Add the parse the command line arguments here and include main function
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Simulate branching Brownian motion.")
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed")
     parser.add_argument('-n', '--num-steps', type=int, default=301, help="Number of steps in the simulation")
     parser.add_argument('-p', '--branching-prob', type=float, default=0.5, help="Probability of branching at each step")

@@ -27,7 +27,7 @@ pip install numpy matplotlib
 ## Usage
 To run the simulation with default parameters, simply execute the script:
 ```bash
-python3 branching_bm.py
+python3 1D-BM-Branching.py --help
 ```
 
 ### Command Line Arguments
