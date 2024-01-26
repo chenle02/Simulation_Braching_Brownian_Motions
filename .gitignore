@@ -179,3 +179,8 @@ simulation_super_brownian_motions/SuperBm_Timestamp=20240126_095859_NumSteps=301
 simulation_super_brownian_motions/SuperBm_Timestamp=20240126_100345_NumSteps=301_UpdateSteps=100_BrachingProb=0.5_GausianScale=10.0_RandomSeed=42.csv
 simulation_super_brownian_motions/SuperBm_Timestamp=20240126_100345_NumSteps=301_UpdateSteps=100_BrachingProb=0.5_GausianScale=10.0_RandomSeed=42.jpeg
 simulation_super_brownian_motions/SuperBm_Timestamp=20240126_100345_NumSteps=301_UpdateSteps=100_BrachingProb=0.5_GausianScale=10.0_RandomSeed=42.png
+
+# White list
+
+!Build_docs/build/latex/simulation_super_brownian_motions.pdf
+!Build_docs/build/html
