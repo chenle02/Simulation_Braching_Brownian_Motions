@@ -106,13 +106,29 @@ class Branching_BM:
 
     def One_Step(self, path_id, step):
         """
-        Go one step for a path.
+        Update the position for a given path for one step.
+
+        Args:
+            path_id (int): The ID of the path to update.
+            step (int): The current step in the simulation.
+
+        This method updates the position of a specific path after one step
+        of the simulation based on a random normal increment.
+
+        Returns:
+            None
         """
         self.positions[path_id][step] = self.positions[path_id][step - 1] + np.random.normal(scale=self.scale)
 
     def simulate(self):
         """
-        Run the simulation of the Brownian motion with branching.
+        Run a simulation of the super Brownian motion.
+
+        This method simulates the Brownian motion process with branching for a specified number of steps.
+        It iterates through each step and each path, updating the paths based on branching conditions and random steps.
+
+        Returns:
+            None
         """
         for step in range(1, self.num_steps):
             for path_index in range(len(self.positions)):
@@ -124,7 +140,13 @@ class Branching_BM:
 
     def plot_paths(self):
         """
-        Plot all the paths of the Brownian motions.
+        Plot sample paths of Brownian motion.
+
+        This method creates a plot of sample paths for Brownian motion with branching. It visualizes the paths over time,
+        sets plot limits, labels, and saves the plot as image files in JPEG and PNG formats.
+
+        Returns:
+            None
         """
         fig, ax = plt.subplots()
 
@@ -162,7 +184,13 @@ class Branching_BM:
 
     def export_paths(self):
         """
-        Export the paths in csv file.
+        Export sample paths to a CSV file.
+
+        This method exports the sample paths of Brownian motion with branching to a CSV file. Each row in the CSV file
+        represents a time step, and each column represents a different path.
+
+        Returns:
+            None
         """
         # Assuming self.positions is a list of lists or a list of NumPy arrays
         filename = self.name + '.csv'
@@ -177,7 +205,16 @@ class Branching_BM:
 
     def Animation(self, dpi=150):
         """
-        Generate the animation of the branching Brownian motion.
+        Generate an animation of the branching Brownian motion.
+
+        This method creates an animation of the branching Brownian motion, visualizing the paths over time. The animation is
+        saved as a GIF file with the specified DPI (dots per inch).
+
+        Args:
+            dpi (int, optional): The DPI (dots per inch) for the animation. Default is 150.
+
+        Returns:
+            None
         """
         print("Generating the animation... (This may take a while)")
         fig, ax = plt.subplots()
@@ -231,13 +268,32 @@ class Branching_BM:
 
 
 def main():
+    """
+    Run the simulation of branching Brownian motion.
+
+    This script simulates branching Brownian motion with customizable parameters using command-line arguments.
+
+    Command Line Options:
+    -s, --seed INT             Random seed (use -1 for a random seed based on current time)
+    -n, --num-steps INT        Maximum number of steps in the simulation
+    -u, --update-steps INT     Number of steps between each branching event
+    -p, --branching-prob FLOAT Probability of branching at each step
+    -c, --scale FLOAT          Scale of the Brownian motion
+    -d, --dpi INT              The dpi parameter for the animation
+    -a, --save-animation       Save the animation as a GIF
+
+    Example Usage:
+    python script.py -s 42 -n 301 -u 100 -p 0.5 -c 10.0 -d 150 -a
+
+    For more details, refer to the script's documentation.
+    """
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed (use -1 for a random seed based on current time)")
     parser.add_argument('-n', '--num-steps', type=int, default=301, help="Maximum number of steps in the simulation")
     parser.add_argument('-u', '--update-steps', type=int, default=100, help="Number of steps between each branching event")
     parser.add_argument('-p', '--branching-prob', type=float, default=0.5, help="Probability of branching at each step")
     parser.add_argument('-c', '--scale', type=float, default=10.0, help="Scale of the Brownian motion")
-    parser.add_argument('-d', '--dpi', type=float, default=150, help="The dpi parameter for the animation")
+    parser.add_argument('-d', '--dpi', type=int, default=150, help="The dpi parameter for the animation")
     parser.add_argument('-a', '--save-animation', action='store_true', help="Save the animation as a GIF")
     args = parser.parse_args()
 
