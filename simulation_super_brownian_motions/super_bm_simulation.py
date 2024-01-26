@@ -77,7 +77,9 @@ class Branching_BM:
         """
         Update the specified path based on the branching and dying logic.
 
-        This method applies the branching and dying logic to the path identified by path_id at the given simulation step. It determines whether the path should branch, continue, or die.
+            This method applies the branching and dying logic to the path
+            identified by path_id at the given simulation step. It determines
+            whether the path should branch, continue, or die.
 
         :param path_id: The identifier of the path to be updated.
         :param step: The current step in the simulation process.
@@ -124,8 +126,10 @@ class Branching_BM:
         """
         Run a simulation of the super Brownian motion.
 
-        This method simulates the Brownian motion process with branching for a specified number of steps.
-        It iterates through each step and each path, updating the paths based on branching conditions and random steps.
+            This method simulates the Brownian motion process with branching
+            for a specified number of steps. It iterates through each step and
+            each path, updating the paths based on branching conditions and
+            random steps.
 
         Returns:
             None
@@ -142,8 +146,9 @@ class Branching_BM:
         """
         Plot sample paths of Brownian motion.
 
-        This method creates a plot of sample paths for Brownian motion with branching. It visualizes the paths over time,
-        sets plot limits, labels, and saves the plot as image files in JPEG and PNG formats.
+            This method creates a plot of sample paths for Brownian motion with
+            branching. It visualizes the paths over time, sets plot limits,
+            labels, and saves the plot as image files in JPEG and PNG formats.
 
         Returns:
             None
@@ -186,8 +191,9 @@ class Branching_BM:
         """
         Export sample paths to a CSV file.
 
-        This method exports the sample paths of Brownian motion with branching to a CSV file. Each row in the CSV file
-        represents a time step, and each column represents a different path.
+            This method exports the sample paths of Brownian motion with
+            branching to a CSV file. Each row in the CSV file represents a time
+            step, and each column represents a different path.
 
         Returns:
             None
@@ -207,8 +213,9 @@ class Branching_BM:
         """
         Generate an animation of the branching Brownian motion.
 
-        This method creates an animation of the branching Brownian motion, visualizing the paths over time. The animation is
-        saved as a GIF file with the specified DPI (dots per inch).
+            This method creates an animation of the branching Brownian motion,
+            visualizing the paths over time. The animation is saved as a GIF
+            file with the specified DPI (dots per inch).
 
         Args:
             dpi (int, optional): The DPI (dots per inch) for the animation. Default is 150.
@@ -271,21 +278,25 @@ def main():
     """
     Run the simulation of branching Brownian motion.
 
-    This script simulates branching Brownian motion with customizable parameters using command-line arguments.
+        This script simulates branching Brownian motion with customizable
+        parameters using command-line arguments.
 
-    Command Line Options:
-    -s, --seed INT             Random seed (use -1 for a random seed based on current time)
-    -n, --num-steps INT        Maximum number of steps in the simulation
-    -u, --update-steps INT     Number of steps between each branching event
-    -p, --branching-prob FLOAT Probability of branching at each step
-    -c, --scale FLOAT          Scale of the Brownian motion
-    -d, --dpi INT              The dpi parameter for the animation
-    -a, --save-animation       Save the animation as a GIF
+    *Command Line Options:*
+
+    + -s, --seed INT             Random seed (use -1 for a random seed based on current time)
+    + -n, --num-steps INT        Maximum number of steps in the simulation
+    + -u, --update-steps INT     Number of steps between each branching event
+    + -p, --branching-prob FLOAT Probability of branching at each step
+    + -c, --scale FLOAT          Scale of the Brownian motion
+    + -d, --dpi INT              The dpi parameter for the animation
+    + -a, --save-animation       Save the animation as a GIF
 
     Example Usage:
-    python script.py -s 42 -n 301 -u 100 -p 0.5 -c 10.0 -d 150 -a
 
-    For more details, refer to the script's documentation.
+    ```
+    python super_bm_simulation.py -s 42 -n 301 -u 100 -p 0.5 -c 10.0 -d 150 -a
+    ```
+
     """
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed (use -1 for a random seed based on current time)")
