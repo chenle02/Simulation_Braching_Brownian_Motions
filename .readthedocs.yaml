@@ -19,7 +19,7 @@ build:
 sphinx:
   configuration: Build_docs/source/conf.py
   builder: "html"
-  builder: "latexpdf"
+  # builder: "latexpdf"
 
 # Optionally build your docs in additional formats such as PDF and ePub
 formats:
