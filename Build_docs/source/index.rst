@@ -3,17 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Simulation_Super_Brownian_Motions's documentation!
-=============================================================
+Documentation: Simulation for Super Brownian Motions
+====================================================
 
-:Authors:
-   Le Chen
-   - Affiliation: Department of Mathematics and Statistics, Auburn University
-   - Emails: le.chen@auburn.edu, chenle02@gmail.com
+.. rubric:: Author
+
+Le Chen
+
+.. rubric:: Affiliation
+
+Department of Mathematics and Statistics, Auburn University
+
+.. rubric:: Emails
+
+- le.chen@auburn.edu
+- chenle02@gmail.com
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    Introduction
