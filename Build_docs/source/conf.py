@@ -101,6 +101,12 @@ latex_elements = {
 # Include both class and __init__ docstrings
 autoclass_content = 'both'
 
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
+
+
 # html_footer = "This project is partially supported by the National Science Foundation under Grant No. 2246850 and the collaboration/travel award from the Simons foundation under Award No. 959981."
 
 # html_footer = '''

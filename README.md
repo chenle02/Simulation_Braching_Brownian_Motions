@@ -2,7 +2,7 @@
 
 ![Super Brownian Motion](./examples/branching_brownian_motion_500_0.5_1.0_12.gif)
 
-
+<!-- Include from here -->
 ## Introduction
 
 This Python script simulates super Brownian Motion (SBm), a stochastic process
@@ -72,3 +72,4 @@ Thanks for helpful discussions with Yumin Zhong and Panqiu Xia from Auburn Unive
 ## License
 
 * [MIT](./LICENSE)
+* <!-- End of inclusion -->

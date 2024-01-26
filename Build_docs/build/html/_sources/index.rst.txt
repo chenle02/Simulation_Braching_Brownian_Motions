@@ -11,11 +11,15 @@ Welcome to Simulation_Super_Brownian_Motions's documentation!
    - Affiliation: Department of Mathematics and Statistics, Auburn University
    - Emails: le.chen@auburn.edu, chenle02@gmail.com
 
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   Introduction
    super_bm_simulation
+   Examples
+   Bibliography
 
 Indices and tables
 ==================
