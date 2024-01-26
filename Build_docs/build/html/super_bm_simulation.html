@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+      <title>super_bm_simulation</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="prev" title="Welcome to Simulation_Super_Brownian_Motions’s documentation!" href="index.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">Simulation_Super_Brownian_Motions</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#welcome-to-simulation-super-brownian-motions-s-documentation">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">super_bm_simulation</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#super-bm-simulation" class="reference internal">super_bm_simulation</a></li>
+                
+                  <li class="toctree-l2"><a href="#bibliography" class="reference internal">Bibliography</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>super_bm_simulation</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← Welcome to Simulation_Super_Brownian_Motions’s documentation!</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="super-bm-simulation">
+<h1>super_bm_simulation<a class="headerlink" href="#super-bm-simulation" title="Permalink to this heading">¶</a></h1>
+<p>Super Brownian motion is also called <em>superprocess</em> in the literature. Check out
+the Wikipedia page for <a class="reference external" href="https://en.wikipedia.org/wiki/Superprocess">Superrpocess</a> and the book by Etheridge
+<span id="id1">[<a class="reference internal" href="#id2167" title="Alison M. Etheridge. An introduction to superprocesses. Volume 20 of University Lecture Series. American Mathematical Society, Providence, RI, 2000. ISBN 0-8218-2706-5. URL: https://doi.org/10.1090/ulect/020, doi:10.1090/ulect/020.">Eth00</a>]</span>.</p>
+<section id="module-super_bm_simulation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-super_bm_simulation" title="Permalink to this heading">¶</a></h2>
+<p>This module simulates branching Brownian motions and includes a variety of functionalities:</p>
+<ul class="simple">
+<li><p><strong>Simulate the Motion</strong>: Create simulations of branching Brownian motions.</p></li>
+<li><p><strong>Plot Paths</strong>: Plot the paths of the motion and save them in JPEG and PNG formats.</p></li>
+<li><p><strong>Export Data</strong>: Export the sample paths to CSV files for further analysis.</p></li>
+<li><p><strong>Generate Animation</strong>: Create an animation of the branching Brownian motion process.</p></li>
+</ul>
+<p>Credits:</p>
+<ul class="simple">
+<li><p><strong>Author</strong>: Le Chen</p></li>
+<li><p><strong>Contact</strong>: <a class="reference external" href="mailto:chenle02&#37;&#52;&#48;gmail&#46;com">chenle02<span>&#64;</span>gmail<span>&#46;</span>com</a> / <a class="reference external" href="mailto:le&#46;chen&#37;&#52;&#48;auburn&#46;edu">le<span>&#46;</span>chen<span>&#64;</span>auburn<span>&#46;</span>edu</a></p></li>
+<li><p><strong>Creation Date</strong>: Created at Tue 23 Jan 2024 04:50:37 PM CST</p></li>
+<li><p><strong>Acknowledgments</strong>: Special thanks to Yimin Zhong (<a class="reference external" href="mailto:yzz0225&#37;&#52;&#48;auburn&#46;edu">yzz0225<span>&#64;</span>auburn<span>&#46;</span>edu</a>) and Panqiu Xia (<a class="reference external" href="mailto:pqxia&#37;&#52;&#48;auburn&#46;edu">pqxia<span>&#64;</span>auburn<span>&#46;</span>edu</a>) for their helpful discussions.</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="super_bm_simulation.Branching_BM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">super_bm_simulation.</span></span><span class="sig-name descname"><span class="pre">Branching_BM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">301</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branching_prob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initialize the Super Brownian Motion simulation with given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_steps</strong> (<em>int</em>) – Number of steps in the simulation. Default is 301.</p></li>
+<li><p><strong>update_steps</strong> (<em>int</em>) – Number of steps between each update. Default is 100.</p></li>
+<li><p><strong>branching_prob</strong> (<em>float</em>) – Probability of branching at each step. Default is 0.5.</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Scale factor for the motion. Default is 10.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Seed for random number generation. Default is 42.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.Animation">
+<span class="sig-name descname"><span class="pre">Animation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.Animation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the animation of the branching Brownian motion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.Branch_or_Die">
+<span class="sig-name descname"><span class="pre">Branch_or_Die</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.Branch_or_Die" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the specified path based on the branching and dying logic.</p>
+<p>This method applies the branching and dying logic to the path identified by path_id at the given simulation step. It determines whether the path should branch, continue, or die.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_id</strong> – The identifier of the path to be updated.</p></li>
+<li><p><strong>step</strong> – The current step in the simulation process.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A boolean value; True if the path is still alive after this step, False if it has died.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.One_Step">
+<span class="sig-name descname"><span class="pre">One_Step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.One_Step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go one step for a path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.export_paths">
+<span class="sig-name descname"><span class="pre">export_paths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.export_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the paths in csv file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.plot_paths">
+<span class="sig-name descname"><span class="pre">plot_paths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.plot_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot all the paths of the Brownian motions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.simulate">
+<span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.simulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the simulation of the Brownian motion with branching.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="super_bm_simulation.main">
+<span class="sig-prename descclassname"><span class="pre">super_bm_simulation.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+<section id="bibliography">
+<h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this heading">¶</a></h1>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id2167"><span class="brackets"><a class="fn-backref" href="#id1">Eth00</a></span></dt>
+<dd><p>Alison M. Etheridge. <em>An introduction to superprocesses</em>. Volume 20 of University Lecture Series. American Mathematical Society, Providence, RI, 2000. ISBN 0-8218-2706-5. URL: <a class="reference external" href="https://doi.org/10.1090/ulect/020">https://doi.org/10.1090/ulect/020</a>, <a class="reference external" href="https://doi.org/10.1090/ulect/020">doi:10.1090/ulect/020</a>.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← Welcome to Simulation_Super_Brownian_Motions’s documentation!</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2024, Le Chen.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
