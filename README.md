@@ -2,7 +2,6 @@
 
 ![Super Brownian Motion](./examples/branching_brownian_motion_500_0.5_1.0_12.gif)
 
-<!-- Include from here -->
 ## Introduction
 
 This Python script simulates super Brownian Motion (SBm), a stochastic process
@@ -28,12 +27,13 @@ pip install simulation-super-brownian-motions
 ```
 
 ## Usage
+### Command line
 To run the simulation with default parameters, simply execute the script:
 ```bash
 SuperBm --help
 ```
 
-### Command Line Arguments
+#### Command Line Arguments
 You can customize the simulation using the following command line arguments:
 - `-s` or `--seed`: Random seed (default: 42), set to `-1` for random seed based on current time (for random outcome)
 - `-n` or `--num-steps`: Number of steps in the simulation (default: 301)
@@ -43,7 +43,7 @@ You can customize the simulation using the following command line arguments:
 - `-d` or `--dpi`: DPI parameter for the animation (default: 150)
 - `-a` or `--save-animation`: Save the animation as a GIF
 
-### Example
+#### Example
 ```bash
 SuperBm --num-steps 500 --branching-prob 0.7 --scale 15
 ```
@@ -54,11 +54,24 @@ If you want the animation, run the following command:
 SuperBm --num-steps 500 --branching-prob 0.7 --scale 15 --save-animation
 ```
 
-## Output
+### Output
 - The script will plot the paths of the Brownian motion.
 - Paths will be exported as a CSV file.
 - The plot will be saved as files in both PNG and JPET formats.
 - With additional argument `-a` or `--save-animation`, the script will generate an animation of the process and save it as a GIF file.
+
+## Within Python as a Module
+You can use the script within Python as a module. The following example shows how to run the simulation with default parameters:
+```python
+import simulation_super_brownian_motions.super_bm_simulation as sbm
+
+# Create an instance of the class
+instance = sbm.Branching_BM()
+
+# Use the instance and its methods
+instance.simulate()
+instance.plot_paths()
+```
 
 ## Contributing
 
@@ -72,4 +85,3 @@ Thanks for helpful discussions with Yumin Zhong and Panqiu Xia from Auburn Unive
 ## License
 
 * [MIT](./LICENSE)
-* <!-- End of inclusion -->
