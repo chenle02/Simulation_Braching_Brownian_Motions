@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='simulation_super_brownian_motions',
-    version='1.2.2',
+    version='1.2.3',
     packages=find_packages(),
     description='This is a package for simulating super Brownian motions.',
     long_description=open('README.md').read(),
