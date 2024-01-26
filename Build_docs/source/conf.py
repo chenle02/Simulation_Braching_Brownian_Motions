@@ -88,7 +88,7 @@ myst_enable_extensions = [
     # ... other extensions
 ]
 
-bibtex_bibfiles = ['doc_rst/All.bib']
+bibtex_bibfiles = ['All.bib']
 math_numfig = True
 
 latex_elements = {
@@ -97,6 +97,9 @@ latex_elements = {
     % \numberwithin{equation}{section}
     '''
 }
+
+# Include both class and __init__ docstrings
+autoclass_content = 'both'
 
 # html_footer = "This project is partially supported by the National Science Foundation under Grant No. 2246850 and the collaboration/travel award from the Simons foundation under Award No. 959981."
 

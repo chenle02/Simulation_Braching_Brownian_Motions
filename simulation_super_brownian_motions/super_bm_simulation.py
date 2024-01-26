@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
 """
+This module simulates branching Brownian motions and includes a variety of functionalities:
 
-Simulations for the branching Brownian motions.
+- **Simulate the Motion**: Create simulations of branching Brownian motions.
+- **Plot Paths**: Plot the paths of the motion and save them in JPEG and PNG formats.
+- **Export Data**: Export the sample paths to CSV files for further analysis.
+- **Generate Animation**: Create an animation of the branching Brownian motion process.
 
-It includes functionalities to:
-- Simulate the motion
-- Plot the paths
-- Export the data
-- Generate an animation of the process
+Credits:
 
-By Le Chen and Chatgpt
-chenle02@gmail.com / le.chen@auburn.edu
-Created at Tue 23 Jan 2024 04:50:37 PM CST
-
-Thanks Yumin Zhong (yzz0225@auburn.edu) and Panqiu Xia (pqxia@auburn.edu) for helpful discussions.
+- **Author**: Le Chen
+- **Contact**: chenle02@gmail.com / le.chen@auburn.edu
+- **Creation Date**: Created at Tue 23 Jan 2024 04:50:37 PM CST
+- **Acknowledgments**: Special thanks to Yimin Zhong (yzz0225@auburn.edu) and Panqiu Xia (pqxia@auburn.edu) for their helpful discussions.
 """
 
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
-import argparse
 import time
 from datetime import datetime
 # import matplotlib.animation as animation
@@ -30,11 +29,18 @@ from matplotlib.animation import PillowWriter
 class Branching_BM:
     def __init__(self, num_steps=301, update_steps=100, branching_prob=0.5, scale=10, seed=42):
         """
-        Initialize the Super Brownian Motion simulation.
+        Initialize the Super Brownian Motion simulation with given parameters.
 
-        :param num_steps: Number of steps in the simulation
-        :param branching_prob: Probability of branching at each step
-        :param seed: random seed
+        :param num_steps: Number of steps in the simulation. Default is 301.
+        :type num_steps: int
+        :param update_steps: Number of steps between each update. Default is 100.
+        :type update_steps: int
+        :param branching_prob: Probability of branching at each step. Default is 0.5.
+        :type branching_prob: float
+        :param scale: Scale factor for the motion. Default is 10.
+        :type scale: float
+        :param seed: Seed for random number generation. Default is 42.
+        :type seed: int
         """
         self.num_steps = num_steps
         self.update_steps = update_steps
@@ -225,7 +231,7 @@ class Branching_BM:
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-s', '--seed', type=int, default=42, help="Random seed (use -1 for a random seed based on current time)")
     parser.add_argument('-n', '--num-steps', type=int, default=301, help="Maximum number of steps in the simulation")
     parser.add_argument('-u', '--update-steps', type=int, default=100, help="Number of steps between each branching event")
