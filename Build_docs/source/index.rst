@@ -6,11 +6,16 @@
 Welcome to Simulation_Super_Brownian_Motions's documentation!
 =============================================================
 
+:Authors:
+   Le Chen
+   - Affiliation: Department of Mathematics and Statistics, Auburn University
+   - Emails: le.chen@auburn.edu, chenle02@gmail.com
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   super_bm_simulation
 
 Indices and tables
 ==================

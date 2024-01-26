@@ -31,8 +31,10 @@ sys.path.insert(0, os.path.abspath('../../simulation_super_brownian_motions/'))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Simulation_Super_Brownian_Motions'
-copyright = '2024, Le Chen, Panqiu Xia, Yimin Zhong'
-author = 'Le Chen, Panqiu Xia, Yimin Zhong'
+copyright = '2024, Le Chen'
+author = 'Le Chen'
+# copyright = '2024, Le Chen, Panqiu Xia, Yimin Zhong'
+# author = 'Le Chen, Panqiu Xia, Yimin Zhong'
 
 
 # -- General configuration ---------------------------------------------------
