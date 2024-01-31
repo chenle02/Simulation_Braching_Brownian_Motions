@@ -2,7 +2,7 @@
 <html  lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <title>Module contents</title>
     
@@ -10,12 +10,9 @@
           <link rel="stylesheet" href="_static/theme.css " type="text/css" />
       
       <!-- sphinx script_files -->
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/documentation_options.js?v=ca842793"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
 
       
       <!-- bundled in js (rollup iife) -->
@@ -72,7 +69,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#welcome-to-simulation-super-brownian-motions-s-documentation">Contents:</a></span>
+        <span class="caption-text"><a href="index.html#documentation-simulation-for-super-brownian-motions">Contents:</a></span>
       </p>
       <ul class="current">
         
@@ -150,7 +147,7 @@
           <div class="content" role="main" v-pre>
             
   <section id="module-super_bm_simulation">
-<span id="module-contents"></span><h1>Module contents<a class="headerlink" href="#module-super_bm_simulation" title="Permalink to this heading">¶</a></h1>
+<span id="module-contents"></span><h1>Module contents<a class="headerlink" href="#module-super_bm_simulation" title="Link to this heading">¶</a></h1>
 <p>This module simulates branching Brownian motions and includes a variety of functionalities:</p>
 <ul class="simple">
 <li><p><strong>Simulate the Motion</strong>: Create simulations of branching Brownian motions.</p></li>
@@ -167,11 +164,11 @@
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="super_bm_simulation.Branching_BM">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">super_bm_simulation.</span></span><span class="sig-name descname"><span class="pre">Branching_BM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">301</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branching_prob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">super_bm_simulation.</span></span><span class="sig-name descname"><span class="pre">Branching_BM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">301</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branching_prob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initialize the Super Brownian Motion simulation with given parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num_steps</strong> (<em>int</em>) – Number of steps in the simulation. Default is 301.</p></li>
 <li><p><strong>update_steps</strong> (<em>int</em>) – Number of steps between each update. Default is 100.</p></li>
@@ -183,7 +180,7 @@
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.Animation">
-<span class="sig-name descname"><span class="pre">Animation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.Animation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">Animation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.Animation" title="Link to this definition">¶</a></dt>
 <dd><p>Generate an animation of the branching Brownian motion.</p>
 <blockquote>
 <div><p>This method creates an animation of the branching Brownian motion,
@@ -191,10 +188,10 @@ visualizing the paths over time. The animation is saved as a GIF
 file with the specified DPI (dots per inch).</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – The DPI (dots per inch) for the animation. Default is 150.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -202,7 +199,7 @@ file with the specified DPI (dots per inch).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.Branch_or_Die">
-<span class="sig-name descname"><span class="pre">Branch_or_Die</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.Branch_or_Die" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">Branch_or_Die</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.Branch_or_Die" title="Link to this definition">¶</a></dt>
 <dd><p>Update the specified path based on the branching and dying logic.</p>
 <blockquote>
 <div><p>This method applies the branching and dying logic to the path
@@ -210,13 +207,13 @@ identified by path_id at the given simulation step. It determines
 whether the path should branch, continue, or die.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>path_id</strong> – The identifier of the path to be updated.</p></li>
 <li><p><strong>step</strong> – The current step in the simulation process.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A boolean value; True if the path is still alive after this step, False if it has died.</p>
 </dd>
 </dl>
@@ -224,10 +221,10 @@ whether the path should branch, continue, or die.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.One_Step">
-<span class="sig-name descname"><span class="pre">One_Step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.One_Step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">One_Step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.One_Step" title="Link to this definition">¶</a></dt>
 <dd><p>Update the position for a given path for one step.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>path_id</strong> (<em>int</em>) – The ID of the path to update.</p></li>
 <li><p><strong>step</strong> (<em>int</em>) – The current step in the simulation.</p></li>
@@ -237,7 +234,7 @@ whether the path should branch, continue, or die.</p>
 <p>This method updates the position of a specific path after one step
 of the simulation based on a random normal increment.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -245,7 +242,7 @@ of the simulation based on a random normal increment.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.export_paths">
-<span class="sig-name descname"><span class="pre">export_paths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.export_paths" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">export_paths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.export_paths" title="Link to this definition">¶</a></dt>
 <dd><p>Export sample paths to a CSV file.</p>
 <blockquote>
 <div><p>This method exports the sample paths of Brownian motion with
@@ -253,7 +250,7 @@ branching to a CSV file. Each row in the CSV file represents a time
 step, and each column represents a different path.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -261,7 +258,7 @@ step, and each column represents a different path.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.plot_paths">
-<span class="sig-name descname"><span class="pre">plot_paths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.plot_paths" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_paths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.plot_paths" title="Link to this definition">¶</a></dt>
 <dd><p>Plot sample paths of Brownian motion.</p>
 <blockquote>
 <div><p>This method creates a plot of sample paths for Brownian motion with
@@ -269,7 +266,7 @@ branching. It visualizes the paths over time, sets plot limits,
 labels, and saves the plot as image files in JPEG and PNG formats.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -277,7 +274,7 @@ labels, and saves the plot as image files in JPEG and PNG formats.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="super_bm_simulation.Branching_BM.simulate">
-<span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.simulate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.Branching_BM.simulate" title="Link to this definition">¶</a></dt>
 <dd><p>Run a simulation of the super Brownian motion.</p>
 <blockquote>
 <div><p>This method simulates the Brownian motion process with branching
@@ -286,7 +283,7 @@ each path, updating the paths based on branching conditions and
 random steps.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -296,7 +293,7 @@ random steps.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="super_bm_simulation.main">
-<span class="sig-prename descclassname"><span class="pre">super_bm_simulation.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.main" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">super_bm_simulation.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#super_bm_simulation.main" title="Link to this definition">¶</a></dt>
 <dd><p>Run the simulation of branching Brownian motion.</p>
 <blockquote>
 <div><p>This script simulates branching Brownian motion with customizable
@@ -363,9 +360,9 @@ parameters using command-line arguments.</p>
        title="next chapter">Some sample animations →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
-      &#169; Copyright 2024, Le Chen.
+      &#169; Copyright 2024, Le Chen, Panqiu Xia, Yimin Zhong.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

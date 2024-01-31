@@ -8,7 +8,7 @@ Documentation: Simulation for Super Brownian Motions
 
 .. rubric:: Author
 
-Le Chen
+Le Chen, Panqiu Xia, and Yimin Zhong
 
 .. rubric:: Affiliation
 
@@ -18,7 +18,8 @@ Department of Mathematics and Statistics, Auburn University
 
 - le.chen@auburn.edu
 - chenle02@gmail.com
-
+- pqxia@auburn.edu
+- yzz0225@auburn.edu  
 
 .. toctree::
    :maxdepth: 3
